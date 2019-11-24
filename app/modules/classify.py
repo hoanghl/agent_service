@@ -157,6 +157,7 @@ def send_post(post_info_dict):
 
         cursor = connection.cursor()
 
+        send_data = 'default'
         for attr in SENDING_ATTRIBUTE_ORDER:
             if attr in ["content", 'link', 'title', 'post_id', 'interior_room', 'orientation',
                         'address_street', 'address_ward', 'surrounding', 'surrounding_name',
@@ -172,8 +173,8 @@ def send_post(post_info_dict):
                 tmp += ']'
 
             elif attr == 'realestate_type':
-                if post_info_dict[attr] == 0:
-                    tmp = '0'
+                if post_info_dict[attr] == 0 or ~isinstance(post_info_dict[attr], int):
+                    tmp = '6'
                 else:
                     tmp = str(post_info_dict[attr])
 
@@ -184,9 +185,9 @@ def send_post(post_info_dict):
             else:
                 tmp = post_info_dict[attr]
 
-            send_data =  'default , ' + tmp
+            send_data = send_data + ',' + tmp
 
-        cursor.execute(f"INSERT INTO {settings.POSTGRE_TABLE} VALUES ({send_data});")
+        cursor.execute(f"INSERT INTO {settings.POSTGRE_TABLE}(id, page_source, link, title, content, address_street, address_ward, surrounding, surrounding_name, surrounding_characteristics, interior_room, project, address_city, address_district, transaction_type, realestate_type, price_sell, price_rent, legal, floor, position_street, potential, area_origin, address_number, lat, long, coordinate, price_m2, orientation, area_cal, post_id, post_date, crawled_date) VALUES ({send_data});")
         connection.commit()
 
     except (psycopg2.Error) as error :

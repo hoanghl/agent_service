@@ -1,43 +1,6 @@
-from app.modules.classify import send_post
+from app.modules.classify import classify
 
-post_info = {
-    "address_city": 1,
-    "address_district": 13,
-    "address_number": None,
-    "address_street": "Đông Hưng Thuận 9",
-    "address_ward": " đông hưng thuận",
-    "area_cal": 100.0,
-    "area_origin": [
-        0,
-        0
-    ],
-    "content": "Đất quận 12 phía sau chợ An Sương bán nhanh để thu hồi vốn bung ra bán ai đến sớm được hỗ trợ sản phẩm tốt giá đẹp. Còn 8 lô tái định cư giá rớt cọc (20 nền nhưng chỉ còn 8 nền). Giá chỉ từ 15,8tr/m2 sổ hồng tại công ty, sang tên công chứng trong ngày, xây dựng tự do. Liên hệ ngay : 0971649767 Em Thanh có Zalo \n Địa chỉ: Đông Hưng Thuận 9, Phường Đông Hưng Thuận, Quận 12, TP.HCM",
-    "floor": 1,
-    "interior_room": None,
-    "legal": 3,
-    "lat": 10.42332423,
-    "long": 108.42534523,
-    "orientation": None,
-    "page_source": 2,
-    "position_street": None,
-    "potential": [
-        2
-    ],
-    "price_m2": 15800000,
-    "price_rent": 0,
-    "price_sell": 15800000,
-    "project": None,
-    "realestate_type": 1,
-    "surrounding": "chợ",
-    "surrounding_characteristics": None,
-    "surrounding_name": "chợ An Sương",
-    "transaction_type": 1,
-    "link" : "https://",
-    "title" : "No title at all",
-    "post_id" : "32",
-    "post_date": 432423423,
-    "crawled_date": 4324237733,
-    'coordinate' : "point(108.42534523,10.42332423)"
-}
+post_info = \
+{"address_city":4,"address_district":69,"address_number":None,"address_street":"N25","address_ward":" hòa phú","area_cal":100,"area_origin":[5,20],"content":"BÁN LÔ ĐẤT ĐƯỜNG N25 KHU TĐC HOÀ LỢI B_P HOÀ PHÚ KẾ ĐẠI HỌC QUỐC TẾ MIỀN ĐÔNG - Chính chủ cần bán gấp lô đất đường N25 khu Tái Định Cư Hoà Lợi B -Thuộc Phường Hoà Phú -TDM\nDt:5x20 (100m2 sổ riêng )\nLô đất nằm ngay trung tâm thành phố mới , kế đại học quốc tế miền đông ,\nĐường nhựa 8m vỉa hè cây xanh thông thoáng, đối diện lô đất là khu công nghiệp công nghệ cao Mappletree với hơn 20.000 công nhân mới đi vào hoạt động\nNhà đang có việc cần nên để lại giá hợp lý cho khách thiện chí mua\nLiên hệ em Chí Thanh:0933213885 để đi coi đất \n Địa chỉ: Đường N25, Phường Hòa Phú, Thủ Dầu Một, Bình Dương","floor":1,"interior_room":None,"lat":11.0619265402378,"legal":1,"long":106.666902576074,"orientation":None,"page_source":3,"position_street":6,"potential":[2],"price_m2":14500000,"price_rent":14500000,"price_sell":0,"project":"Tái Định Cư Hoà Lợi B -","realestate_type":0,"surrounding":"đại học quốc tế, khu công nghiệp công nghệ cao","surrounding_characteristics":None,"surrounding_name":"đại học quốc tế miền đông, khu công nghiệp công nghệ cao Mappletree","title":"BÁN LÔ ĐẤT ĐƯỜNG N25 KHU TĐC HOÀ LỢI B_P HOÀ PHÚ KẾ ĐẠI HỌC QUỐC TẾ MIỀN ĐÔNG","transaction_type":2,"link":"https://batdongsan.com.vn/ban-dat-duong-n25-phuong-hoa-phu-2/lo-khu-tdc-loi-b-p-ke-dai-hoc-quoc-te-mien-dong-pr23451253","post_id":"23451253","post_date":1574528400,"crawled_date":1574557146}
 
-send_post(post_info)
+classify(post_info)
