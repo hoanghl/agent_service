@@ -172,12 +172,6 @@ def send_post(post_info_dict):
                         tmp += ','
                 tmp += ']'
 
-            elif attr == 'realestate_type':
-                if post_info_dict[attr] == 0 or post_info_dict[attr] is None:
-                    tmp = '6'
-                else:
-                    tmp = str(post_info_dict[attr])
-
             elif post_info_dict[attr] is None:
                 tmp = 'null'
             elif ~isinstance(post_info_dict[attr], str):
