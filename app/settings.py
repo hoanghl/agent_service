@@ -1,15 +1,16 @@
 import json
 import os
+import sys
 
-# try:
-#     ENV = os.environ['ENV']
-#     CONF_PATH = os.environ['CONF_PATH']
-# except KeyError:
-#     print("Bad ENV argument.")
-#     exit(1)
+try:
+    ENV = os.environ['ENV']
+    CONF_PATH = os.environ['CONF_PATH']
+except KeyError:
+    print("Bad ENV argument.")
+    sys.exit(1)
 
-ENV = "DEV"
-CONF_PATH = "../configs.json"
+# ENV = "DEV"
+# CONF_PATH = "../configs.json"
 
 with open(CONF_PATH, "r") as f:
     config = json.load(f)
